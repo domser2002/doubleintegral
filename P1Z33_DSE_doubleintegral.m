@@ -24,16 +24,10 @@ arguments
     n=1000
     m=1000
 end
-Hx=(b-a)/n;
-Hy=(d-c)/m;
-kx=1:(n-1);
-ky=1:(m-1);
-Sx=@(y)(f(a+kx*Hx,y));
-g=@(y)(Hx/2*(f(0,y)+f(1,y)+2*sum(Sx(y))));
-v=c+ky*Hy;
-Sy=zeros(1,m-1);
-for i=1:(m-1)
-    Sy(i)=g(v(i));
-end
-I=(Hy/2)*(g(c)+g(d)+2*sum(Sy));
+% H=(b-a)/n;
+% k=1:(n-1);
+% Sx=@(y)(f(a+k*H,y));
+% g=@(y)(H/2*(f(0,y)+f(1,y)+2*sum(Sx(y))));
+g=integral38(f,a,b,n);
+I=integraltrap(g,c,d,m);
 end
