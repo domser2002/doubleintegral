@@ -21,28 +21,32 @@ arguments
     b
     c
     d
-    n=1000
-    m=1000
+    n=10
+    m=n.^2
 end
-H1=(b-a)/n;
-H2=(d-c)/m;
-T=2;
-T=repmat(T,1,n-1);
-T=[1 T 1];
+%steps for each variable
+Hx=(b-a)/n;
+Hy=(d-c)/m;
+%generate vector of newton 3/8 coefficients
 N=[3 3 2];
-N=repmat(N,1,m);
+N=repmat(N,1,n);
 N(end)=[];
 N=[1 N 1];
-
+%generate vector of trapezoids coefficients
+T=2;
+T=repmat(T,1,m-1);
+T=[1 T 1];
+%generate matrix of coefficients for double integral
 C=T'*N;
-C=((H1*H2)/16)*C;
-
-x=a:H1:b;
-y=c:(H2/3):d;
-W=zeros(n+1,3*m+1);
-for i=1:(3*m+1)
-    W(:,i)=f(x,y(i));
+C=((Hx*Hy)/16)*C;
+%generate matrix of function values in data points
+x=a:(Hx/3):b;
+y=c:Hy:d;
+W=zeros(m+1,3*n+1);
+for i=1:(3*n+1)
+    W(:,i)=f(x(i),y);
 end
+%generate final result
 S=C.*W;
 I=sum(sum(S));
 end
