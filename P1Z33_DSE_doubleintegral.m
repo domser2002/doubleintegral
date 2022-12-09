@@ -25,7 +25,7 @@ arguments
     m=1000
 end
 H1=(b-a)/n;
-H2=(b-a)/m;
+H2=(d-c)/m;
 T=2;
 T=repmat(T,1,n-1);
 T=[1 T 1];
@@ -43,22 +43,11 @@ C=T'*N;
 C=((H1*H2)/4)*C;
 
 x=a:H1:b;
-y=a:H2:b;
+y=c:H2:d;
 W=zeros(n+1,m+1);
 for i=1:(m+1)
     W(:,i)=f(x,y(i));
 end
 S=C.*W;
 I=sum(sum(S));
-
-% H=(b-a)/n;
-% k=1:(n-1);
-% Sx=@(y)(f(a+k*H,y));
-% g=@(y)(H/2*(f(0,y)+f(1,y)+2*sum(Sx(y))));
-% g(0)
-% g(1)
-% g=integral38(f,a,b,n);
-% g(0)
-% g(1)
-% I=integraltrap(g,c,d,m);
 end
