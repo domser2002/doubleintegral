@@ -6,9 +6,8 @@ b
 n=1000;
 end
 H=(b-a)/n;
-k=1:(n-1);
+k=0:(n-1);
 S=f(a+k*H);
 S=sum(S);
 I=(H/2)*(f(a)+f(b)+2*S);
 end
-
