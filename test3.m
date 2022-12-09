@@ -21,18 +21,7 @@ tic;
 I=P1Z33_DSE_doubleintegral(f,0,1,0,1,10000,10000);
 t=toc;
 disp(strcat("For 10000 subintervals each variable program returned ",num2str(I)," after ",num2str(t)," seconds"))
-tic;
-I=P1Z33_DSE_doubleintegral(f,0,1,0,1,100000,100000);
-t=toc;
-disp(strcat("For 100000 subintervals each variable program returned ",num2str(I)," after ",num2str(t)," seconds"))
-tic;
-I=P1Z33_DSE_doubleintegral(f,0,1,0,1,1000000,1000000);
-t=toc;
-disp(strcat("For 1000000 subintervals each variable program returned ",num2str(I)," after ",num2str(t)," seconds"))
-tic;
-I=P1Z33_DSE_doubleintegral(f,0,1,0,1,10000000,10000000);
-t=toc;
-disp(strcat("For 10000000 subintervals each variable program returned ",num2str(I)," after ",num2str(t)," seconds"))
+
 
 f=@(x,y)(sin(x)+sin(y));
 disp("Results for f(x,y)=sin(x)+sin(y):")
@@ -52,18 +41,6 @@ tic;
 I=P1Z33_DSE_doubleintegral(f,0,1,0,1,10000,10000);
 t=toc;
 disp(strcat("For 10000 subintervals each variable program returned ",num2str(I)," after ",num2str(t)," seconds"))
-tic;
-I=P1Z33_DSE_doubleintegral(f,0,1,0,1,100000,100000);
-t=toc;
-disp(strcat("For 100000 subintervals each variable program returned ",num2str(I)," after ",num2str(t)," seconds"))
-tic;
-I=P1Z33_DSE_doubleintegral(f,0,1,0,1,1000000,1000000);
-t=toc;
-disp(strcat("For 1000000 subintervals each variable program returned ",num2str(I)," after ",num2str(t)," seconds"))
-tic;
-I=P1Z33_DSE_doubleintegral(f,0,1,0,1,10000000,10000000);
-t=toc;
-disp(strcat("For 10000000 subintervals each variable program returned ",num2str(I)," after ",num2str(t)," seconds"))
 
 f=@(x,y)(x.^6+x.^3.*y.^5+y.^4);
 disp("Results for f(x,y)=x^6+x^3*y^5+y^4:")
@@ -83,18 +60,6 @@ tic;
 I=P1Z33_DSE_doubleintegral(f,0,1,0,1,10000,10000);
 t=toc;
 disp(strcat("For 10000 subintervals each variable program returned ",num2str(I)," after ",num2str(t)," seconds"))
-tic;
-I=P1Z33_DSE_doubleintegral(f,0,1,0,1,100000,100000);
-t=toc;
-disp(strcat("For 100000 subintervals each variable program returned ",num2str(I)," after ",num2str(t)," seconds"))
-tic;
-I=P1Z33_DSE_doubleintegral(f,0,1,0,1,1000000,1000000);
-t=toc;
-disp(strcat("For 1000000 subintervals each variable program returned ",num2str(I)," after ",num2str(t)," seconds"))
-% tic;
-% I=P1Z33_DSE_doubleintegral(f,0,1,0,1,10000000,10000000);
-% t=toc;
-% disp(strcat("For 10000000 subintervals each variable program returned ",num2str(I)," after ",num2str(t)," seconds"))
 
 f=@(x,y)(sin(x.^2+y.^2)+cos(x.^7+y.^11));
 disp("Results for f(x,y)=sin(x^2+y^2)+cos(x^7+y^11):")
@@ -114,18 +79,6 @@ tic;
 I=P1Z33_DSE_doubleintegral(f,0,1,0,1,10000,10000);
 t=toc;
 disp(strcat("For 10000 subintervals each variable program returned ",num2str(I)," after ",num2str(t)," seconds"))
-tic;
-I=P1Z33_DSE_doubleintegral(f,0,1,0,1,100000,100000);
-t=toc;
-disp(strcat("For 100000 subintervals each variable program returned ",num2str(I)," after ",num2str(t)," seconds"))
-tic;
-I=P1Z33_DSE_doubleintegral(f,0,1,0,1,1000000,1000000);
-t=toc;
-disp(strcat("For 1000000 subintervals each variable program returned ",num2str(I)," after ",num2str(t)," seconds"))
 
-% tic;
-% I=P1Z33_DSE_doubleintegral(f,0,1,0,1,10000000,10000000);
-% t=toc;
-% disp(strcat("For 10000000 subintervals each variable program returned ",num2str(I)," after ",num2str(t)," seconds"))
 end
 

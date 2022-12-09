@@ -29,23 +29,18 @@ H2=(d-c)/m;
 T=2;
 T=repmat(T,1,n-1);
 T=[1 T 1];
-N=2;
-N=repmat(N,1,m-1);
+N=[3 3 2];
+N=repmat(N,1,m);
+N(end)=[];
 N=[1 N 1];
-% N=[3 2];
-% N=repmat(N,1,ceil((m-1)/2));
-% if mod(m,2)==0
-%     N(end)=[];
-% end
-% N=[1 N 1];
 
 C=T'*N;
-C=((H1*H2)/4)*C;
+C=((H1*H2)/16)*C;
 
 x=a:H1:b;
-y=c:H2:d;
-W=zeros(n+1,m+1);
-for i=1:(m+1)
+y=c:(H2/3):d;
+W=zeros(n+1,3*m+1);
+for i=1:(3*m+1)
     W(:,i)=f(x,y(i));
 end
 S=C.*W;
